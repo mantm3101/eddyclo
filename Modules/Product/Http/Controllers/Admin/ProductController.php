@@ -31,9 +31,9 @@ class ProductController extends AdminBaseController
      */
     public function index()
     {
-        //$products = $this->product->all();
+        $products = $this->product->all();
 
-        return view('product::admin.products.index', compact(''));
+        return view('product::admin.products.index', compact('products'));
     }
 
     /**

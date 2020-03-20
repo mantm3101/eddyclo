@@ -31,9 +31,9 @@ class CustomerController extends AdminBaseController
      */
     public function index()
     {
-        //$customers = $this->customer->all();
+        $customers = $this->customer->all();
 
-        return view('customer::admin.customers.index', compact(''));
+        return view('customer::admin.customers.index', compact('customers'));
     }
 
     /**
