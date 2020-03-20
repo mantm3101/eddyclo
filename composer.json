@@ -19,6 +19,7 @@
         "cartalyst/sentinel": "^2.0",
         "idavoll/adminlte-theme": "4.0.x-dev",
         "idavoll/core-module": "4.0.x-dev",
+        "fzaninotto/faker": "^1.4",
         "idavoll/dashboard-module": "4.0.x-dev",
         "idavoll/flatly-theme": "4.0.x-dev",
         "idavoll/media-module": "4.0.x-dev",
@@ -34,7 +35,6 @@
         "barryvdh/laravel-debugbar": "^3.2",
         "beyondcode/laravel-dump-server": "^1.0",
         "filp/whoops": "^2.0",
-        "fzaninotto/faker": "^1.4",
         "league/commonmark": "^0.18.3",
         "league/flysystem-aws-s3-v3": "^1.0",
         "mockery/mockery": "^1.0",
@@ -64,8 +64,7 @@
             "dev-master": "4.0.x-dev"
         },
         "laravel": {
-            "dont-discover": [
-            ]
+            "dont-discover": []
         }
     },
     "scripts": {
