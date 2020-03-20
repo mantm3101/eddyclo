@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "def10a1757601c00568a84061e642e35",
+    "content-hash": "1ea2c979a5ec98be239a16e04bee4920",
     "packages": [
         {
             "name": "cartalyst/sentinel",
@@ -8359,7 +8359,7 @@
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
-        "php": "^7.1.3"
+        "php": "7.3.*"
     },
     "platform-dev": []
 }
