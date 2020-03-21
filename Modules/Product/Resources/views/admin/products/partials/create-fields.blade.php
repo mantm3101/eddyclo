@@ -6,7 +6,7 @@
 
 <div class='form-group{{ $errors->has('size') ? ' has-error' : '' }}'>
     {!! Form::label('size', 'Size') !!}
-    {!! Form::number('size', old('size'), ['class' => 'form-control', 'placeholder' => 'Size']) !!}
+    {!! Form::select('size', Modules\Product\Entities\Product::getSizes(), old('size'), ['class' => 'form-control']) !!}
     {!! $errors->first('Size', '<span class="help-block">:message</span>') !!}
 </div>
 
