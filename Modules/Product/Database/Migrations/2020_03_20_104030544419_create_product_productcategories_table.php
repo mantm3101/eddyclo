@@ -1,10 +1,9 @@
 <?php
 
-use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateProductCategoriesTable extends Migration
+class CreateProductProductCategoriesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -17,7 +16,8 @@ class CreateProductCategoriesTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('description')->nullable();
-            $table->unsignedBigInteger('parent_id')->references('id')->on('product__categories')->nullable();
+            $table->unsignedInteger('parent_id')->nullable();
+            $table->foreign('parent_id')->references('id')->on('product__categories')->nullable();
             $table->timestamps();
         });
     }

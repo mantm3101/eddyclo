@@ -20,9 +20,14 @@ class Product extends Model
 
     protected $table = 'product__products';
 
-    protected $fillable = ['name', 'size', 'quantity', 'price'];
+    protected $fillable = ['name', 'size_type', 'category_id', 'quantity', 'price'];
 
-    public static function getSizes()
+    public function details()
+    {
+        return $this->hasMany(ProductDetail::class, 'product_id', 'id');
+    }
+
+    public static function getTextSizes()
     {
         return [
             '' => '--Choose your size--',
@@ -37,7 +42,7 @@ class Product extends Model
     public static function getSizeTypes()
     {
         return [
-            static::SIZE_TYPE_NA => 'NA',
+            static::SIZE_TYPE_NA => 'N/A',
             static::SIZE_TYPE_NUMBER => 'NUMBER',
             static::SIZE_TYPE_TEXT => 'TEXT',
         ];

@@ -2,17 +2,17 @@
 
 @section('content-header')
 <h1>
-    {{ trans('product::products.title.edit product') }}
+    {{ trans('product::productdetails.title.edit productdetail') }}
 </h1>
 <ol class="breadcrumb">
     <li><a href="{{ route('dashboard.index') }}"><i class="fa fa-dashboard"></i> {{ trans('core::core.breadcrumb.home') }}</a></li>
-    <li><a href="{{ route('admin.product.product.index') }}">{{ trans('product::products.title.products') }}</a></li>
-    <li class="active">{{ trans('product::products.title.edit product') }}</li>
+    <li><a href="{{ route('admin.product.productdetail.index', $product->id) }}">{{ trans('product::productdetails.title.productdetails') }}</a></li>
+    <li class="active">{{ trans('product::productdetails.title.edit productdetail') }}</li>
 </ol>
 @stop
 
 @section('content')
-{!! Form::open(['route' => ['admin.product.product.update', $product->id], 'method' => 'put']) !!}
+{!! Form::open(['route' => ['admin.product.productdetail.update', $product->id,$productdetail->id], 'method' => 'put']) !!}
 <div class="row">
     <div class="col-md-12">
         <div class="nav-tabs-custom">
@@ -22,28 +22,19 @@
                 @foreach (LaravelLocalization::getSupportedLocales() as $locale => $language)
                 <?php $i++; ?>
                 <div class="tab-pane {{ locale() == $locale ? 'active' : '' }}" id="tab_{{ $i }}">
-                    @include('product::admin.products.partials.fields', ['lang' => $locale])
+                    @include('product::admin.productdetails.partials.fields', ['lang' => $locale])
                 </div>
                 @endforeach
 
-
+                <div class="box-footer">
+                    <button type="submit" class="btn btn-primary btn-flat">{{ trans('core::core.button.update') }}</button>
+                    <a class="btn btn-danger pull-right btn-flat" href="{{ route('admin.product.productdetail.index', $product->id)}}"><i class="fa fa-times"></i> {{ trans('core::core.button.cancel') }}</a>
+                </div>
             </div>
-            <div class="box-footer">
-                <button type="submit" class="btn btn-primary btn-flat">{{ trans('core::core.button.update') }}</button>
-                <a class="btn btn-danger pull-right btn-flat" href="{{ route('admin.product.product.index')}}"><i class="fa fa-times"></i> {{ trans('core::core.button.cancel') }}</a>
-            </div>
-        </div>
-
+        </div> {{-- end nav-tabs-custom --}}
     </div>
 </div>
 {!! Form::close() !!}
-
-<div class="row">
-    <div class="col-md-12">
-        @include('product::admin.products.partials.detail')
-    </div>
-</div>
-@include('core::partials.delete-modal')
 @stop
 
 @section('footer')
@@ -62,7 +53,7 @@
         $(document).keypressAction({
             actions: [{
                 key: 'b',
-                route: "<?= route('admin.product.product.index') ?>"
+                route: "<?= route('admin.product.productdetail.index', $product->id) ?>"
             }]
         });
     });

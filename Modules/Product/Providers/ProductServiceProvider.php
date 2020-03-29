@@ -31,7 +31,11 @@ class ProductServiceProvider extends ServiceProvider
 
         $this->app['events']->listen(LoadingBackendTranslations::class, function (LoadingBackendTranslations $event) {
             $event->load('products', array_dot(trans('product::products')));
+            $event->load('productcategories', array_dot(trans('product::productcategories')));
+            $event->load('productdetails', array_dot(trans('product::productdetails')));
             // append translations
+
+
 
         });
 
@@ -69,7 +73,33 @@ class ProductServiceProvider extends ServiceProvider
                 return new \Modules\Product\Repositories\Cache\CacheProductDecorator($repository);
             }
         );
+        $this->app->bind(
+            'Modules\Product\Repositories\ProductCategoryRepository',
+            function () {
+                $repository = new \Modules\Product\Repositories\Eloquent\EloquentProductCategoryRepository(new \Modules\Product\Entities\ProductCategory());
+
+                if (! config('app.cache')) {
+                    return $repository;
+                }
+
+                return new \Modules\Product\Repositories\Cache\CacheProductCategoryDecorator($repository);
+            }
+        );
+        $this->app->bind(
+            'Modules\Product\Repositories\ProductDetailRepository',
+            function () {
+                $repository = new \Modules\Product\Repositories\Eloquent\EloquentProductDetailRepository(new \Modules\Product\Entities\ProductDetail());
+
+                if (! config('app.cache')) {
+                    return $repository;
+                }
+
+                return new \Modules\Product\Repositories\Cache\CacheProductDetailDecorator($repository);
+            }
+        );
 // add bindings
+
+
 
     }
 
