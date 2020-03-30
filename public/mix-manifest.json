@@ -2,13 +2,5 @@
     "/js/app.js": "/js/app.js",
     "/css/app.css": "/css/app.css",
     "/js/manifest.js": "/js/manifest.js",
-    "/js/vendor.js": "/js/vendor.js",
-    "/js/app.f2f819a2098458ab428d.hot-update.js": "/js/app.f2f819a2098458ab428d.hot-update.js",
-    "/js/app.8ff74fba069ef0aa8364.hot-update.js": "/js/app.8ff74fba069ef0aa8364.hot-update.js",
-    "/js/app.03cfca5b6e1e109befe8.hot-update.js": "/js/app.03cfca5b6e1e109befe8.hot-update.js",
-    "/js/vendor.03cfca5b6e1e109befe8.hot-update.js": "/js/vendor.03cfca5b6e1e109befe8.hot-update.js",
-    "/js/app.52554257d60827613e2c.hot-update.js": "/js/app.52554257d60827613e2c.hot-update.js",
-    "/js/vendor.52554257d60827613e2c.hot-update.js": "/js/vendor.52554257d60827613e2c.hot-update.js",
-    "/js/app.f6a6824ef7f332aaabf9.hot-update.js": "/js/app.f6a6824ef7f332aaabf9.hot-update.js",
-    "/js/vendor.f6a6824ef7f332aaabf9.hot-update.js": "/js/vendor.f6a6824ef7f332aaabf9.hot-update.js"
+    "/js/vendor.js": "/js/vendor.js"
 }

@@ -41,8 +41,7 @@ class RegisterProductSidebar implements \Maatwebsite\Sidebar\SidebarExtender
                 $item->icon('fa fa-copy');
                 $item->weight(10);
                 $item->authorize(
-                     /* append */
-                );
+                    /* append */);
                 $item->item(trans('product::products.title.products'), function (Item $item) {
                     $item->icon('fa fa-copy');
                     $item->weight(0);
@@ -52,7 +51,18 @@ class RegisterProductSidebar implements \Maatwebsite\Sidebar\SidebarExtender
                         $this->auth->hasAccess('product.products.index')
                     );
                 });
-// append
+                $item->item(trans('product::productcategories.title.productcategories'), function (Item $item) {
+                    $item->icon('fa fa-copy');
+                    $item->weight(0);
+                    $item->append('admin.product.productcategory.create');
+                    $item->route('admin.product.productcategory.index');
+                    $item->authorize(
+                        $this->auth->hasAccess('product.productcategories.index')
+                    );
+                });
+                // append
+
+
 
             });
         });

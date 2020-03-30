@@ -2,11 +2,11 @@
 
 @section('content-header')
 <h1>
-    {{ trans('product::products.title.products') }}
+    {{ trans('product::productcategories.title.productcategories') }}
 </h1>
 <ol class="breadcrumb">
     <li><a href="{{ route('dashboard.index') }}"><i class="fa fa-dashboard"></i> {{ trans('core::core.breadcrumb.home') }}</a></li>
-    <li class="active">{{ trans('product::products.title.products') }}</li>
+    <li class="active">{{ trans('product::productcategories.title.productcategories') }}</li>
 </ol>
 @stop
 
@@ -15,8 +15,8 @@
     <div class="col-xs-12">
         <div class="row">
             <div class="btn-group pull-right" style="margin: 0 15px 15px 0;">
-                <a href="{{ route('admin.product.product.create') }}" class="btn btn-primary btn-flat" style="padding: 4px 10px;">
-                    <i class="fa fa-pencil"></i> {{ trans('product::products.button.create product') }}
+                <a href="{{ route('admin.product.productcategory.create') }}" class="btn btn-primary btn-flat" style="padding: 4px 10px;">
+                    <i class="fa fa-pencil"></i> {{ trans('product::productcategories.button.create productcategory') }}
                 </a>
             </div>
         </div>
@@ -30,26 +30,28 @@
                         <thead>
                             <tr>
                                 <th>Name</th>
-                                <th>Price</th>
+                                <th>Description</th>
+                                <th>Parent</th>
                                 <th>{{ trans('core::core.table.created at') }}</th>
                                 <th data-sortable="false">{{ trans('core::core.table.actions') }}</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <?php if (isset($products)) : ?>
-                                <?php foreach ($products as $product) : ?>
+                            <?php if (isset($productcategories)) : ?>
+                                <?php foreach ($productcategories as $productcategory) : ?>
                                     <tr>
-                                        <td> {{ $product->name }} </td>
-                                        <td> {{ number_format($product->price) }} </td>
+                                        <td>{{ $productcategory->name }}</td>
+                                        <td>{{ $productcategory->description }}</td>
+                                        <td>{{ $productcategory->parent_id }}</td>
                                         <td>
-                                            <a href="{{ route('admin.product.product.edit', [$product->id]) }}">
-                                                {{ $product->created_at }}
+                                            <a href="{{ route('admin.product.productcategory.edit', [$productcategory->id]) }}">
+                                                {{ $productcategory->created_at }}
                                             </a>
                                         </td>
                                         <td>
                                             <div class="btn-group">
-                                                <a href="{{ route('admin.product.product.edit', [$product->id]) }}" class="btn btn-default btn-flat"><i class="fa fa-pencil"></i></a>
-                                                <button class="btn btn-danger btn-flat" data-toggle="modal" data-target="#modal-delete-confirmation" data-action-target="{{ route('admin.product.product.destroy', [$product->id]) }}"><i class="fa fa-trash"></i></button>
+                                                <a href="{{ route('admin.product.productcategory.edit', [$productcategory->id]) }}" class="btn btn-default btn-flat"><i class="fa fa-pencil"></i></a>
+                                                <button class="btn btn-danger btn-flat" data-toggle="modal" data-target="#modal-delete-confirmation" data-action-target="{{ route('admin.product.productcategory.destroy', [$productcategory->id]) }}"><i class="fa fa-trash"></i></button>
                                             </div>
                                         </td>
                                     </tr>
@@ -73,7 +75,7 @@
 @section('shortcuts')
 <dl class="dl-horizontal">
     <dt><code>c</code></dt>
-    <dd>{{ trans('product::products.title.create product') }}</dd>
+    <dd>{{ trans('product::productcategories.title.create productcategory') }}</dd>
 </dl>
 @stop
 
@@ -83,7 +85,7 @@
         $(document).keypressAction({
             actions: [{
                 key: 'c',
-                route: "<?= route('admin.product.product.create') ?>"
+                route: "<?= route('admin.product.productcategory.create') ?>"
             }]
         });
     });

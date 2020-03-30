@@ -9,6 +9,8 @@ use Modules\Product\Http\Requests\CreateProductRequest;
 use Modules\Product\Http\Requests\UpdateProductRequest;
 use Modules\Product\Repositories\ProductRepository;
 use Modules\Core\Http\Controllers\Admin\AdminBaseController;
+use Modules\Product\Entities\ProductCategory;
+use Modules\Product\Http\Requests\CreateProductDetailRequest;
 
 class ProductController extends AdminBaseController
 {
@@ -54,9 +56,9 @@ class ProductController extends AdminBaseController
      */
     public function store(CreateProductRequest $request)
     {
-        $this->product->create($request->all());
+        $product = $this->product->create($request->all());
 
-        return redirect()->route('admin.product.product.index')
+        return redirect()->route('admin.product.product.edit', $product->id)
             ->withSuccess(trans('core::core.messages.resource created', ['name' => trans('product::products.title.products')]));
     }
 
@@ -68,6 +70,7 @@ class ProductController extends AdminBaseController
      */
     public function edit(Product $product)
     {
+        $product->load('details');
         return view('product::admin.products.edit', compact('product'));
     }
 
@@ -80,9 +83,11 @@ class ProductController extends AdminBaseController
      */
     public function update(Product $product, UpdateProductRequest $request)
     {
-        $this->product->update($product, $request->all());
+        $data = $request->except('size_type');
 
-        return redirect()->route('admin.product.product.index')
+        $this->product->update($product, $data);
+
+        return redirect()->route('admin.product.product.edit', $product->id)
             ->withSuccess(trans('core::core.messages.resource updated', ['name' => trans('product::products.title.products')]));
     }
 
