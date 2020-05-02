@@ -1,31 +1,18 @@
 import React from "react";
-import { Link, Switch, Route } from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import Shop from "./pages/Shop";
+import { HOME, SHOP } from "../constants/routes";
 
-const HOME = "/home";
-const ABOUT_ME = "/about-me";
-
-const HOME_PAGE = () => {
-    const date = new Date();
-    return (
-        <div>
-            <h1>Hello World</h1>
-            <h2>It is {date.toLocaleTimeString()}</h2>
-        </div>
-    );
-};
-
-const ABOUT_ME_PAGE = () => <div>This is about me page</div>;
 
 const App = () => (
     <div>
-        <Link to={HOME}>To Home</Link>
-        <Link to={ABOUT_ME}>To About Me</Link>
         <Switch>
-            <Route path={[HOME, "/"]}>
-                <HOME_PAGE />
+            <Route exact path={[HOME, "/"]}>
+                <Home />
             </Route>
-            <Route path={ABOUT_ME}>
-                <ABOUT_ME_PAGE />
+            <Route exact path={SHOP}>
+                <Shop />
             </Route>
         </Switch>
     </div>
