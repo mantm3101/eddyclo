@@ -1,0 +1,29 @@
+{
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "useBuiltIns": "usage",
+        "corejs": {
+          "version": 3
+        },
+        "targets": {
+          "browsers": [
+            "last 2 versions",
+            "IE >= 11",
+            "safari >= 11",
+            "ios_saf >= 10"
+          ]
+        },
+        "modules": false,
+        "loose": true
+      },
+      "@babel/preset-react"
+    ]
+  ],
+  "plugins": [
+    "@babel/plugin-syntax-dynamic-import",
+    "@babel/plugin-proposal-class-properties",
+    "@babel/plugin-proposal-optional-chaining"
+  ]
+}

@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { HOME, SHOP } from '../../../constants/routes'
+import { HOME, SHOP, LOGIN } from '../../../constants/routes'
 
 const Navbar = () => (
   <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
@@ -20,6 +20,11 @@ const Navbar = () => (
           <li class="dropdown">
             <Link to={SHOP} >
               Shop
+            </Link>
+          </li>
+          <li class="dropdown">
+            <Link to={LOGIN}>
+              Login
             </Link>
           </li>
         </ul>

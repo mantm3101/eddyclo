@@ -17,6 +17,14 @@ mix.less('resources/less/main.less', 'assets/css/main.css');
 * Publishing the assets
 */
 mix.webpackConfig({
+    module: {
+        rules: [
+            {
+                test: /\.(js|mjs|jsx|ts|tsx)$/,
+                loader: require.resolve('babel-loader')
+            }
+        ]
+    },
     plugins: [
         new WebpackShellPlugin({ onBuildEnd: ['php ../../artisan asgard:publish:theme ' + themeInfo.name] })
     ]

@@ -23,6 +23,7 @@
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="{{ Theme::url('images/favicons/ms-icon-144x144.png') }}">
     <meta name="theme-color" content="#ffffff">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <!--  
     Stylesheets
     =============================================
@@ -43,13 +44,12 @@
     <link href="{{ Theme::url('lib/magnific-popup/dist/magnific-popup.css') }}" rel="stylesheet">
     <link href="{{ Theme::url('lib/simple-text-rotator/simpletextrotator.css') }}" rel="stylesheet">
     <!-- Main stylesheet and color file-->
-<link href="{{ Theme::url('css/main.css') }}" rel="stylesheet">
+    <link href="{{ Theme::url('css/main.css') }}" rel="stylesheet">
 </head>
 
 <body>
     @yield('content')
 </body>
-
 
 {!! Theme::script('js/index.js') !!}
 

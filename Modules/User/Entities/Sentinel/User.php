@@ -10,8 +10,9 @@ use Laracasts\Presenter\PresentableTrait;
 use Modules\User\Entities\UserInterface;
 use Modules\User\Entities\UserToken;
 use Modules\User\Presenters\UserPresenter;
+use Tymon\JWTAuth\Contracts\JWTSubject;
 
-class User extends EloquentUser implements UserInterface, AuthenticatableContract
+class User extends EloquentUser implements JWTSubject, UserInterface, AuthenticatableContract
 {
     use PresentableTrait, Authenticatable;
 
@@ -45,6 +46,28 @@ class User extends EloquentUser implements UserInterface, AuthenticatableContrac
         }
 
         parent::__construct($attributes);
+    }
+
+    // Rest omitted for brevity
+
+    /**
+     * Get the identifier that will be stored in the subject claim of the JWT.
+     *
+     * @return mixed
+     */
+    public function getJWTIdentifier()
+    {
+        return $this->getKey();
+    }
+
+    /**
+     * Return a key value array, containing any custom claims to be added to the JWT.
+     *
+     * @return array
+     */
+    public function getJWTCustomClaims()
+    {
+        return [];
     }
 
     /**

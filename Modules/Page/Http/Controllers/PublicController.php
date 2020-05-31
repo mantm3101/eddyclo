@@ -1,5 +1,4 @@
 <?php
-
 namespace Modules\Page\Http\Controllers;
 
 use Illuminate\Contracts\Foundation\Application;
