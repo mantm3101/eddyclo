@@ -1,11 +1,11 @@
 import { render } from 'react-dom';
 import { Router } from 'react-router-dom';
 import React, { StrictMode } from 'react';
-import App from './pages/Test/App';
 import navigator from './navigator';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import reducer from './store/reducer';
+import App from "./App";
 
 let store = createStore(reducer);
 
