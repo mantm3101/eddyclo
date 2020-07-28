@@ -50,10 +50,10 @@ class User extends EloquentUser implements UserInterface, AuthenticatableContrac
 
     public function getJWTIdentifier()
     {
-        return "";
+        return $this->getKey();
     }
 
-    
+
     public function getJWTCustomClaims()
     {
         return [];

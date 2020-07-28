@@ -11,9 +11,7 @@
 |
 */
 
-$api->group([], function ($api) {
-    $api->post('jwt-login', 'AuthController@login');
-    $api->post('logout', 'AuthController@logout');
-    $api->post('refresh', 'AuthController@refresh');
-    $api->post('me', 'AuthController@me');
-});
+$api->post('auth_token', 'AuthController@login');
+$api->post('logout', 'AuthController@logout');
+$api->post('refresh', 'AuthController@refresh');
+$api->get('profile', 'AuthController@profile');
