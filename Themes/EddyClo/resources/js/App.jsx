@@ -8,7 +8,6 @@ import { fetchProfile } from "./store/logic/profile";
 import { connect } from "react-redux";
 import { useEffect } from "react";
 
-
 const App = ({fetchProfile}) => {
 
     useEffect(() => {
@@ -31,6 +30,7 @@ const App = ({fetchProfile}) => {
         </div>
     );
 }
+
 
 const mapDispatchToProps = dispatch => ({
     fetchProfile : () => dispatch(fetchProfile())

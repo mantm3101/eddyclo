@@ -1,8 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { HOME, SHOP, LOGIN } from '../../../constants/routes'
+import { connect } from "react-redux";
 
-const Navbar = () => (
+const Navbar = ({profile}) => (
   <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
     <div class="container">
       <div class="navbar-header">
@@ -23,9 +24,12 @@ const Navbar = () => (
             </Link>
           </li>
           <li class="dropdown">
-            <Link to={LOGIN}>
-              Login
-            </Link>
+              { profile ? <a>{profile.first_name} {profile.last_name}</a> :
+              <Link to={LOGIN}>
+                Login
+              </Link>
+            }
+
           </li>
         </ul>
       </div>
@@ -33,4 +37,8 @@ const Navbar = () => (
   </nav>
 )
 
-export default Navbar;
+const mapStateToProps = (state) => ({
+    profile: state.profile.data
+});
+
+export default connect(mapStateToProps)(Navbar);

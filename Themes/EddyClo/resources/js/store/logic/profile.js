@@ -25,14 +25,21 @@ const requestProfileFail= () => {
 }
 
 export const fetchProfile = () => {
+
     return async dispatch => {
+
+        if(!localStorage.getItem('auth_token')){
+            return dispatch(requestProfileFail("Invalid credential"));
+        }
+
         dispatch(requestProfile());
 
         try{
             const { data } = await api.get('http://eddyclo.test/api/profile');
-            return dispatch(requestProfileSuccess());
+            return dispatch(requestProfileSuccess(data));
         }catch(err){
-            return dispatch(requestProfileFail());
+            localStorage.removeItem('auth_token');
+            return dispatch(requestProfileFail("No"));
         }
     }
 }

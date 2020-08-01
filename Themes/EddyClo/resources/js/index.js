@@ -2,20 +2,19 @@ import { render } from 'react-dom';
 import { Router } from 'react-router-dom';
 import React, { StrictMode } from 'react';
 import navigator from './navigator';
-import { createStore, applyMiddleware, compose } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import thunkMiddleware from "redux-thunk";
-import { createLogger } from "redux-logger";
+import { composeWithDevTools } from 'redux-devtools-extension';
 import reducer from './store/reducer';
 import App from "./App";
 
-const loggerMiddleware = createLogger()
 
-const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+console.log("Hello from Index");
 
 let store = createStore(
     reducer,
-    composeEnhancer(applyMiddleware(thunkMiddleware, loggerMiddleware)),
+    composeWithDevTools(applyMiddleware(thunkMiddleware)),
 );
 
 render(
