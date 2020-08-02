@@ -8,10 +8,10 @@ import Footer from "../../components/Layouts/Footer";
 const Shop = () => (
     <div>
         <Navbar />
-        <div class="main">
+        <div className="main">
             <Cover />
             <Toolbar />
-            <hr class="divider-w" />
+            <hr className="divider-w" />
             <Product />
         </div>
         <Footer />

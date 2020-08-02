@@ -9,9 +9,6 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 import reducer from './store/reducer';
 import App from "./App";
 
-
-console.log("Hello from Index");
-
 let store = createStore(
     reducer,
     composeWithDevTools(applyMiddleware(thunkMiddleware)),

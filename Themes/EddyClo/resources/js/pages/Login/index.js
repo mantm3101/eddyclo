@@ -1,53 +1,76 @@
 import React from "react";
-import {connect} from "react-redux"
-import {callLogin} from "../../store/logic/login";
+import { connect } from "react-redux";
+import { callLogin } from "../../store/logic/login";
 import { Route, Redirect } from "react-router-dom";
-// import { Form, Field } from "react-final-form";
+import { Form, Field } from "react-final-form";
 
-const Form = ({submit}) => (
-    <>
-    <div>
-                <label>Username</label>
-                <input type="text" />
-            </div>
-            <div>
-                <label>Password</label>
-                <input type="text" />
-            </div>
-            <button onClick={submit}>Login</button>
-    </>
-)
-
-const Login = ({login, profile, ...rest}) => {
-
-    const submit = () => {
+const LoginForm = ({ login }) => {
+    const onSubmit = values => {
         login({
-            email:"mantm3101@gmail.com",
-            password:"eddyclo@2020"
+            email: values.email,
+            password: values.password
         });
-    }
+    };
 
-    console.log("Hello");
+    const initialValues = {
+        email: "",
+        password: ""
+    };
 
     return (
-        <Route {...rest}
-                render={ props => {
-                    if(profile && profile.data){
-                        return <Redirect to="/"/>
-                    }else {
-                        return <Form submit={submit}/>
-                    }
-                }}
+        <Form
+            onSubmit={onSubmit}
+            initialValues={initialValues}
+            render={({ handleSubmit, submitting }) => (
+                <form onSubmit={handleSubmit}>
+                    <div>
+                        <label>Username</label>
+                        <Field
+                            name="email"
+                            component="input"
+                            type="email"
+                            placeholder="Email"
+                        />
+                    </div>
+                    <div>
+                        <label>Password</label>
+                        <Field
+                            name="password"
+                            component="input"
+                            type="password"
+                            placeholder="Password"
+                        />
+                    </div>
+                    <button disabled={submitting} type="submit">
+                        Login
+                    </button>
+                </form>
+            )}
         />
-    )
-}
+    );
+};
 
-const mapStateToProps = (state) => ({
-    profile : state.profile.data
+const Login = ({ login, profile, ...rest }) => {
+    return (
+        <Route
+            {...rest}
+            render={props => {
+                if (profile.data) {
+                    return <Redirect to="/" />;
+                } else {
+                    return <LoginForm login={login} />;
+                }
+            }}
+        />
+    );
+};
+
+const mapStateToProps = state => ({
+    profile: state.profile
 });
 
-const mapDispatchToProps = (dispatch) => ({
-    login : (credential) => dispatch(callLogin(credential))
-})
+const mapDispatchToProps = dispatch => ({
+    login: credential => dispatch(callLogin(credential))
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(Login);
