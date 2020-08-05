@@ -35,7 +35,7 @@
     "element-ui": "^2.4.7",
     "font-awesome": "^4.7.0",
     "form-backend-validation": "^2.3.3",
-    "lodash": "^4.17.11",
+    "lodash": "^4.17.19",
     "moment": "^2.22.2",
     "typy": "^2.0.1",
     "vue": "^2.6.10",
