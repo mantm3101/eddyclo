@@ -11,6 +11,8 @@ use Modules\Product\Repositories\ProductRepository;
 use Modules\Core\Http\Controllers\Admin\AdminBaseController;
 use Modules\Product\Entities\ProductCategory;
 use Modules\Product\Http\Requests\CreateProductDetailRequest;
+use Symfony\Component\HttpFoundation\File\Exception\ExtensionFileException;
+use Symfony\Component\HttpFoundation\File\Exception\FileException;
 
 class ProductController extends AdminBaseController
 {
@@ -56,7 +58,22 @@ class ProductController extends AdminBaseController
      */
     public function store(CreateProductRequest $request)
     {
-        $product = $this->product->create($request->all());
+        $file = $request->file('image');
+        $data = $request->input();
+        if ($file) {
+            $fileExtension = $file->getClientOriginalExtension();
+            if (!in_array($fileExtension, ['png', 'jpg', 'jpeg'])) {
+                throw new ExtensionFileException();
+            }
+
+            $fileName = time() . ".$fileExtension";
+
+            $file->storeAs(Product::ROOT_IMAGE_PATH, $fileName, 'public');
+
+            $data['image'] = $fileName;
+        }
+
+        $product = $this->product->create($data);
 
         return redirect()->route('admin.product.product.edit', $product->id)
             ->withSuccess(trans('core::core.messages.resource created', ['name' => trans('product::products.title.products')]));
@@ -83,7 +100,22 @@ class ProductController extends AdminBaseController
      */
     public function update(Product $product, UpdateProductRequest $request)
     {
-        $data = $request->except('size_type');
+        $file = $request->file('image');
+        $data = $request->except('size_type', 'update_image');
+        if ($request->input('update_image', false) && $file) {
+            $fileExtension = $file->getClientOriginalExtension();
+            if (!in_array($fileExtension, ['png', 'jpg', 'jpeg'])) {
+                throw new ExtensionFileException();
+            }
+
+            $fileName = time() . ".$fileExtension";
+
+            $file->storeAs(Product::ROOT_IMAGE_PATH, $fileName, 'public');
+
+            $data = $request->input();
+            $data['image'] = $fileName;
+        }
+
 
         $this->product->update($product, $data);
 

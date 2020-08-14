@@ -1,16 +1,27 @@
 import { render } from 'react-dom';
-import { BrowserRouter as Router } from 'react-router-dom';
+import { Router } from 'react-router-dom';
 import React, { StrictMode } from 'react';
-import App from './App'
+import navigator from './navigator';
+import { createStore, applyMiddleware } from 'redux';
+import { Provider } from 'react-redux';
+import thunkMiddleware from "redux-thunk";
+import { composeWithDevTools } from 'redux-devtools-extension';
+import reducer from './store/reducer';
+import App from "./App";
 
+let store = createStore(
+    reducer,
+    composeWithDevTools(applyMiddleware(thunkMiddleware)),
+);
 
 render(
     <StrictMode>
-        <Router>
-            <App />
-        </Router>
-    </StrictMode>,
-    document.getElementById('app')
+        <Provider store={store}>
+            <Router history={navigator}>
+                <App />
+            </Router>
+        </Provider>
+    </StrictMode>, document.getElementById('app')
 );
 
 

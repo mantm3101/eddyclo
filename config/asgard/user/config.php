@@ -13,7 +13,7 @@ return [
     | Define which route to redirect to after a successful login
     |--------------------------------------------------------------------------
     */
-    'redirect_route_after_login' => 'homepage',
+    'redirect_route_after_login' => 'dashboard.index',
     /*
     |--------------------------------------------------------------------------
     | Define which route the user should be redirected to after accessing
@@ -68,16 +68,14 @@ return [
     |--------------------------------------------------------------------------
     | Set the fields that will be cast to Carbon dates
     */
-    'dates' => [
-    ],
+    'dates' => [],
     /*
     |--------------------------------------------------------------------------
     | Custom casted fields
     |--------------------------------------------------------------------------
     | Set the fields that will be casted by Eloquent
     */
-    'casts' => [
-    ],
+    'casts' => [],
     /*
     |--------------------------------------------------------------------------
     | Dynamic relations
@@ -85,9 +83,9 @@ return [
     | Add relations that will be dynamically added to the User entity
      */
     'relations' => [
-//        'extension' => function (): \Illuminate\Database\Eloquent\Relations\BelongsTo {
-//            return $this->belongsTo(UserExtension::class, 'user_id', 'id')->first();
-//        }
+        //        'extension' => function (): \Illuminate\Database\Eloquent\Relations\BelongsTo {
+        //            return $this->belongsTo(UserExtension::class, 'user_id', 'id')->first();
+        //        }
     ],
     /*
     |--------------------------------------------------------------------------
