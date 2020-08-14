@@ -2,12 +2,21 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { HOME, SHOP, LOGIN } from "../../../constants/routes";
 import { connect } from "react-redux";
+import api from "../../api";
 
 const Profile = ({ profile }) => {
+    const logout = async () => {
+        try {
+            await api().post("http://eddyclo.test/api/logout");
+            localStorage.removeItem("auth_token");
+            window.location.reload();
+        } catch (e) {}
+    };
+
     return (
         <a>
             {profile.first_name} {profile.last_name}{" "}
-            <i onClick classNameName="fa fa-sign-out"></i>
+            <i onClick={logout} className="fa fa-sign-out"></i>
         </a>
     );
 };

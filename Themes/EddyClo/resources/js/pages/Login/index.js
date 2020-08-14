@@ -3,6 +3,8 @@ import { connect } from "react-redux";
 import { callLogin } from "../../store/logic/login";
 import { Route, Redirect } from "react-router-dom";
 import { Form, Field } from "react-final-form";
+import Navbar from "../../components/Layouts/Navbar";
+import Footer from "../../components/Layouts/Footer";
 
 const LoginForm = ({ login }) => {
     const onSubmit = values => {
@@ -18,35 +20,50 @@ const LoginForm = ({ login }) => {
     };
 
     return (
-        <Form
-            onSubmit={onSubmit}
-            initialValues={initialValues}
-            render={({ handleSubmit, submitting }) => (
-                <form onSubmit={handleSubmit}>
-                    <div>
-                        <label>Username</label>
-                        <Field
-                            name="email"
-                            component="input"
-                            type="email"
-                            placeholder="Email"
-                        />
-                    </div>
-                    <div>
-                        <label>Password</label>
-                        <Field
-                            name="password"
-                            component="input"
-                            type="password"
-                            placeholder="Password"
-                        />
-                    </div>
-                    <button disabled={submitting} type="submit">
-                        Login
-                    </button>
-                </form>
-            )}
-        />
+        <div>
+            <Navbar />
+            <div className="main">
+                <Form
+                    onSubmit={onSubmit}
+                    initialValues={initialValues}
+                    render={({ handleSubmit, submitting }) => (
+                        <div className="col-sm-5 col-sm-offset-1 mb-sm-40">
+                            <h4 class="font-alt">Login</h4>
+                            <hr class="divider-w mb-10"></hr>
+                            <form onSubmit={handleSubmit}>
+                                <div className="form-group">
+                                    <Field
+                                        className="form-control"
+                                        name="email"
+                                        component="input"
+                                        type="email"
+                                        placeholder="Email"
+                                    />
+                                </div>
+                                <div className="form-group">
+                                    <Field
+                                        className="form-control"
+                                        name="password"
+                                        component="input"
+                                        type="password"
+                                        placeholder="Password"
+                                    />
+                                </div>
+                                <div className="form-group">
+                                    <button
+                                        className="btn btn-round btn-b"
+                                        disabled={submitting}
+                                        type="submit"
+                                    >
+                                        Login
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    )}
+                />
+            </div>
+        </div>
     );
 };
 

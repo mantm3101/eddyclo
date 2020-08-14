@@ -12,7 +12,7 @@
 @stop
 
 @section('content')
-{!! Form::open(['route' => ['admin.product.product.store'], 'method' => 'post']) !!}
+{!! Form::open(['route' => ['admin.product.product.store'], 'method' => 'post', 'files' => true]) !!}
 <div class="row">
     <div class="col-md-12">
         <div class="box box-primary">

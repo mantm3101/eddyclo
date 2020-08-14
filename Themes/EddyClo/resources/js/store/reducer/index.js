@@ -1,9 +1,10 @@
 import profile from "./profile";
+import products from "./products";
 import { combineReducers } from "redux";
 
 const reducer = combineReducers({
-    profile
+    profile,
+    products
 });
-
 
 export default reducer;

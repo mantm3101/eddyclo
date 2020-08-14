@@ -12,6 +12,11 @@
 */
 
 $api->post('auth_token', 'AuthController@login');
-$api->post('logout', 'AuthController@logout');
-$api->post('refresh', 'AuthController@refresh');
-$api->get('profile', 'AuthController@profile');
+
+$api->get('products', 'ProductController@index');
+
+$api->group(['middleware' => 'auth'], function ($api) {
+    $api->post('logout', 'AuthController@logout');
+    $api->post('refresh', 'AuthController@refresh');
+    $api->get('profile', 'AuthController@profile');
+});

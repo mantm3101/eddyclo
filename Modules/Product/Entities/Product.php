@@ -17,10 +17,12 @@ class Product extends Model
     public const SIZE_TYPE_NUMBER = 2;
     public const SIZE_TYPE_TEXT = 3;
 
+    const ROOT_IMAGE_PATH = "images/products/";
+
 
     protected $table = 'product__products';
 
-    protected $fillable = ['name', 'size_type', 'category_id', 'quantity', 'price'];
+    protected $fillable = ['name', 'size_type', 'category_id', 'quantity', 'price', 'image'];
 
     public function details()
     {
@@ -46,5 +48,10 @@ class Product extends Model
             static::SIZE_TYPE_NUMBER => 'NUMBER',
             static::SIZE_TYPE_TEXT => 'TEXT',
         ];
+    }
+
+    public function getFilePath()
+    {
+        return self::ROOT_IMAGE_PATH . $this->image;
     }
 }

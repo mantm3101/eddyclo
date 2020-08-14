@@ -29,3 +29,19 @@ $price = !empty($product) ? $product->price : old('price');
     {!! Form::number('price', $price, ['class' => 'form-control', 'placeholder' => 'Price']) !!}
     {!! $errors->first('Price', '<span class="help-block">:message</span>') !!}
 </div>
+
+<div class='form-group{{ $errors->has('image') ? ' has-error' : '' }}'>
+    <label for="image">
+        Image
+    </label>
+    @if($product)
+    <div>
+        <img src="{{ $product->getFilePath() }}" />
+    </div>
+    <p>
+        <input type="checkbox" name="update_image"> Update image
+    </p>
+    @endif
+    <input type="file" name="image">
+    {!! $errors->first('Image', '<span class="help-block">:message</span>') !!}
+</div>
