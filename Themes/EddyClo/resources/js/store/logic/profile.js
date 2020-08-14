@@ -33,7 +33,7 @@ export const fetchProfile = (fromLogin = false) => {
         dispatch(requestProfile());
 
         try {
-            const { data } = await api().get("http://eddyclo.test/api/profile");
+            const { data } = await api().get("/api/profile");
 
             if (fromLogin) {
                 history.push("/");

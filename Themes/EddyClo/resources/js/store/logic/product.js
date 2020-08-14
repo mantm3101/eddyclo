@@ -28,9 +28,7 @@ export const fetchProducts = () => {
         dispatch(requestProducts());
 
         try {
-            const { data } = await axios.get(
-                "http://eddyclo.test/api/products"
-            );
+            const { data } = await axios.get("/api/products");
             return dispatch(requestProductsSuccess(data.data));
         } catch (e) {
             console.log(e);

@@ -7,7 +7,7 @@ import api from "../../api";
 const Profile = ({ profile }) => {
     const logout = async () => {
         try {
-            await api().post("http://eddyclo.test/api/logout");
+            await api().post("/api/logout");
             localStorage.removeItem("auth_token");
             window.location.reload();
         } catch (e) {}

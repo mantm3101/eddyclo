@@ -29,10 +29,7 @@ export const callLogin = credential => {
         dispatch(requestLogin(credential));
 
         try {
-            const { data } = await axios.post(
-                `http://eddyclo.test/api/auth_token`,
-                credential
-            );
+            const { data } = await axios.post(`/api/auth_token`, credential);
 
             localStorage.setItem("auth_token", data.access_token);
 
