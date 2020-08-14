@@ -33,7 +33,7 @@ export const fetchProfile = (fromLogin = false) => {
         dispatch(requestProfile());
 
         try {
-            const { data } = await api().get("/api/profile");
+            const { data } = await api().get("/profile");
 
             if (fromLogin) {
                 history.push("/");
