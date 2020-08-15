@@ -33,7 +33,6 @@ class User extends EloquentUser implements UserInterface, AuthenticatableContrac
 
     public function __construct(array $attributes = [])
     {
-        $a = 1;
         $this->loginNames = config('asgard.user.config.login-columns');
         $this->fillable = config('asgard.user.config.fillable');
         if (config()->has('asgard.user.config.presenter')) {
