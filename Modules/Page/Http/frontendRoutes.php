@@ -13,5 +13,4 @@ $router->any('{uri}', [
     'as' => 'page',
     'middleware' => config('asgard.page.config.middleware'),
 ])->where('uri', '.*');
-
-$a = 1;
+$a = 2;
