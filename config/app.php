@@ -189,8 +189,8 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
 
-        // Modules\Core\Providers\AsgardServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+        Modules\Core\Providers\AsgardServiceProvider::class,
 
 
     ],
