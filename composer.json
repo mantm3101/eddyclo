@@ -16,12 +16,6 @@
         "dingo/api": "^2",
         "fideloper/proxy": "^4.0",
         "fzaninotto/faker": "^1.4",
-        "laravel/framework": "5.7.*",
-        "laravel/tinker": "^1.0",
-        "nwidart/laravel-modules": "^4.0",
-        "tymon/jwt-auth": "^1.0"
-    },
-    "require-dev": {
         "idavoll/adminlte-theme": "4.0.x-dev",
         "idavoll/core-module": "4.0.x-dev",
         "idavoll/dashboard-module": "4.0.x-dev",
@@ -34,6 +28,12 @@
         "idavoll/tag-module": "4.0.x-dev",
         "idavoll/translation-module": "4.0.x-dev",
         "idavoll/workshop-module": "4.0.x-dev",
+        "laravel/framework": "5.7.*",
+        "laravel/tinker": "^1.0",
+        "nwidart/laravel-modules": "^4.0",
+        "tymon/jwt-auth": "^1.0"
+    },
+    "require-dev": {
         "barryvdh/laravel-debugbar": "^3.2",
         "beyondcode/laravel-dump-server": "^1.0",
         "filp/whoops": "^2.0",
@@ -75,7 +75,6 @@
         ],
         "pre-update-cmd": [],
         "post-autoload-dump": [
-            "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
             "@php artisan package:discover --ansi"
         ]
     },
