@@ -23,6 +23,7 @@
         "idavoll/media-module": "4.0.x-dev",
         "idavoll/menu-module": "4.0.x-dev",
         "idavoll/page-module": "4.0.x-dev",
+        "idavoll/user-module": "4.0.x-dev",
         "idavoll/setting-module": "4.0.x-dev",
         "idavoll/tag-module": "4.0.x-dev",
         "idavoll/translation-module": "4.0.x-dev",
