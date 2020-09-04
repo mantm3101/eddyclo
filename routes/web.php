@@ -13,6 +13,4 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::get('/welcome', function () {
-    return view('welcome');
-});
+Route::get('/{path?}', '\Modules\Page\Http\Controllers\PublicController@homepage');
