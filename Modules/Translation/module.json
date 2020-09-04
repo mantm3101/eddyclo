@@ -9,7 +9,6 @@
     "providers": [
         "Modules\\Translation\\Providers\\RouteServiceProvider"
     ],
-    "aliases":{},
-    "files": [
-    ]
+    "aliases": [],
+    "files": []
 }

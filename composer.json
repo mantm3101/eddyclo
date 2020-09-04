@@ -23,10 +23,10 @@
         "idavoll/media-module": "4.0.x-dev",
         "idavoll/menu-module": "4.0.x-dev",
         "idavoll/page-module": "4.0.x-dev",
+        "idavoll/user-module": "4.0.x-dev",
         "idavoll/setting-module": "4.0.x-dev",
         "idavoll/tag-module": "4.0.x-dev",
         "idavoll/translation-module": "4.0.x-dev",
-        "idavoll/user-module": "4.0.x-dev",
         "idavoll/workshop-module": "4.0.x-dev",
         "laravel/framework": "5.7.*",
         "laravel/tinker": "^1.0",
@@ -75,7 +75,6 @@
         ],
         "pre-update-cmd": [],
         "post-autoload-dump": [
-            "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
             "@php artisan package:discover --ansi"
         ]
     },

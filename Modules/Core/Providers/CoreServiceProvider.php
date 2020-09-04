@@ -131,7 +131,7 @@ class CoreServiceProvider extends ServiceProvider
             InstallCommand::class,
             PublishThemeAssetsCommand::class,
             PublishModuleAssetsCommand::class,
-            DownloadModuleCommand::class,
+            // DownloadModuleCommand::class,
             DeleteModuleCommand::class,
         ]);
     }
@@ -281,7 +281,7 @@ class CoreServiceProvider extends ServiceProvider
 
             $laravelDefaultLocale = $this->app->config->get('app.locale');
 
-            if (! in_array($laravelDefaultLocale, array_keys($availableLocales))) {
+            if (!in_array($laravelDefaultLocale, array_keys($availableLocales))) {
                 $this->app->config->set('app.locale', array_keys($availableLocales)[0]);
             }
             $this->app->config->set('laravellocalization.supportedLocales', $availableLocales);
