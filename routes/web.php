@@ -13,4 +13,5 @@
 
 use Illuminate\Support\Facades\Route;
 
+Route::get('/backend', '\Modules\Dashboard\Http\Controllers\Admin\DashboardController@index');
 Route::get('/{path?}', '\Modules\Page\Http\Controllers\PublicController@homepage');
