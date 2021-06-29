@@ -1351,6 +1351,7 @@
                 "faker",
                 "fixtures"
             ],
+            "abandoned": true,
             "time": "2019-12-12T13:22:17+00:00"
         },
         {
@@ -1548,12 +1549,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Idavoll/AdminLTE.git",
-                "reference": "7611e21ceee0cc7eb7317407ad69f928891828e4"
+                "reference": "bc1507742d90bb928bbc8d656a146a7b6259badc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Idavoll/AdminLTE/zipball/7611e21ceee0cc7eb7317407ad69f928891828e4",
-                "reference": "7611e21ceee0cc7eb7317407ad69f928891828e4",
+                "url": "https://api.github.com/repos/Idavoll/AdminLTE/zipball/bc1507742d90bb928bbc8d656a146a7b6259badc",
+                "reference": "bc1507742d90bb928bbc8d656a146a7b6259badc",
                 "shasum": ""
             },
             "require": {
@@ -1581,7 +1582,7 @@
             "keywords": [
                 "asgard-cms"
             ],
-            "time": "2020-09-01T00:35:55+00:00"
+            "time": "2020-11-10T16:52:20+00:00"
         },
         {
             "name": "idavoll/core-module",
@@ -1649,12 +1650,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Idavoll/Dashboard.git",
-                "reference": "b2e7263bc344e81030bd2d3ccc21ddc3c6dc0345"
+                "reference": "ef583fee3b7b690550cd7267faae643f9a1e2cf1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Idavoll/Dashboard/zipball/b2e7263bc344e81030bd2d3ccc21ddc3c6dc0345",
-                "reference": "b2e7263bc344e81030bd2d3ccc21ddc3c6dc0345",
+                "url": "https://api.github.com/repos/Idavoll/Dashboard/zipball/ef583fee3b7b690550cd7267faae643f9a1e2cf1",
+                "reference": "ef583fee3b7b690550cd7267faae643f9a1e2cf1",
                 "shasum": ""
             },
             "require": {
@@ -1686,7 +1687,7 @@
                 "asgardcms",
                 "dashboard"
             ],
-            "time": "2018-11-07T10:21:08+00:00"
+            "time": "2020-11-19T23:30:43+00:00"
         },
         {
             "name": "idavoll/flatly-theme",
@@ -1735,27 +1736,27 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Idavoll/Media.git",
-                "reference": "1b4123840212a120a3fb641ec20c97f2c8e62042"
+                "reference": "7210bbce03b9d402bee626961221b6ae5411ffd9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Idavoll/Media/zipball/1b4123840212a120a3fb641ec20c97f2c8e62042",
-                "reference": "1b4123840212a120a3fb641ec20c97f2c8e62042",
+                "url": "https://api.github.com/repos/Idavoll/Media/zipball/7210bbce03b9d402bee626961221b6ae5411ffd9",
+                "reference": "7210bbce03b9d402bee626961221b6ae5411ffd9",
                 "shasum": ""
             },
             "require": {
                 "composer/installers": "~1.0",
                 "guzzlehttp/psr7": "^1.3",
                 "idavoll/tag-module": "4.0.x-dev",
-                "intervention/image": "^2.4",
+                "intervention/image": "^2.5",
                 "php": "^7.1.3"
             },
             "require-dev": {
-                "doctrine/dbal": "^2.5",
+                "doctrine/dbal": "^2.11",
                 "friendsofphp/php-cs-fixer": "^2.12",
                 "league/flysystem-aws-s3-v3": "~1.0",
                 "mockery/mockery": "^0.9.5",
-                "orchestra/testbench": "3.6.*",
+                "orchestra/testbench": "3.8.*",
                 "phpunit/phpunit": "~7.0"
             },
             "type": "asgard-module",
@@ -1784,7 +1785,7 @@
                 "library",
                 "media"
             ],
-            "time": "2020-09-03T01:39:17+00:00"
+            "time": "2020-11-19T23:30:43+00:00"
         },
         {
             "name": "idavoll/menu-module",
@@ -1845,12 +1846,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Idavoll/Page.git",
-                "reference": "37329cc234fa4da930279aa2679d4b2257f0dd30"
+                "reference": "6421423391c3e8f44affa15ed5b4d23fc839d73a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Idavoll/Page/zipball/37329cc234fa4da930279aa2679d4b2257f0dd30",
-                "reference": "37329cc234fa4da930279aa2679d4b2257f0dd30",
+                "url": "https://api.github.com/repos/Idavoll/Page/zipball/6421423391c3e8f44affa15ed5b4d23fc839d73a",
+                "reference": "6421423391c3e8f44affa15ed5b4d23fc839d73a",
                 "shasum": ""
             },
             "require": {
@@ -1859,7 +1860,7 @@
                 "php": "^7.1.3"
             },
             "require-dev": {
-                "orchestra/testbench": "3.6.*",
+                "orchestra/testbench": "3.8.*",
                 "phpunit/phpunit": "~7.0"
             },
             "type": "asgard-module",
@@ -1884,7 +1885,7 @@
                 "asgardcms",
                 "pages"
             ],
-            "time": "2020-02-04T20:39:35+00:00"
+            "time": "2020-12-02T14:38:11+00:00"
         },
         {
             "name": "idavoll/setting-module",
@@ -1939,12 +1940,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Idavoll/Tag.git",
-                "reference": "328c319ea12623a4eac22e6aeb955fb9f057ca8e"
+                "reference": "f4d514e9806bb305011b8f892ff3d9ba9ac33a47"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Idavoll/Tag/zipball/328c319ea12623a4eac22e6aeb955fb9f057ca8e",
-                "reference": "328c319ea12623a4eac22e6aeb955fb9f057ca8e",
+                "url": "https://api.github.com/repos/Idavoll/Tag/zipball/f4d514e9806bb305011b8f892ff3d9ba9ac33a47",
+                "reference": "f4d514e9806bb305011b8f892ff3d9ba9ac33a47",
                 "shasum": ""
             },
             "require": {
@@ -1953,7 +1954,7 @@
             },
             "require-dev": {
                 "idavoll/page-module": "4.0.x-dev",
-                "orchestra/testbench": "3.6.*",
+                "orchestra/testbench": "3.8.*",
                 "phpunit/phpunit": "~7.0"
             },
             "type": "asgard-module",
@@ -1983,7 +1984,7 @@
                 "asgardcms",
                 "tags"
             ],
-            "time": "2019-09-05T18:34:50+00:00"
+            "time": "2020-11-19T23:30:43+00:00"
         },
         {
             "name": "idavoll/translation-module",
@@ -2920,16 +2921,16 @@
         },
         {
             "name": "league/flysystem",
-            "version": "1.1.3",
+            "version": "1.1.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/flysystem.git",
-                "reference": "9be3b16c877d477357c015cec057548cf9b2a14a"
+                "reference": "f3ad69181b8afed2c9edf7be5a2918144ff4ea32"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/9be3b16c877d477357c015cec057548cf9b2a14a",
-                "reference": "9be3b16c877d477357c015cec057548cf9b2a14a",
+                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/f3ad69181b8afed2c9edf7be5a2918144ff4ea32",
+                "reference": "f3ad69181b8afed2c9edf7be5a2918144ff4ea32",
                 "shasum": ""
             },
             "require": {
@@ -2945,7 +2946,6 @@
                 "phpunit/phpunit": "^8.5.8"
             },
             "suggest": {
-                "ext-fileinfo": "Required for MimeType",
                 "ext-ftp": "Allows you to use FTP server storage",
                 "ext-openssl": "Allows you to use FTPS server storage",
                 "league/flysystem-aws-s3-v2": "Allows you to use S3 storage with AWS SDK v2",
@@ -3007,7 +3007,7 @@
                     "type": "other"
                 }
             ],
-            "time": "2020-08-23T07:39:11+00:00"
+            "time": "2021-06-23T21:56:05+00:00"
         },
         {
             "name": "league/fractal",
@@ -3075,16 +3075,16 @@
         },
         {
             "name": "league/mime-type-detection",
-            "version": "1.4.0",
+            "version": "1.7.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/mime-type-detection.git",
-                "reference": "fda190b62b962d96a069fcc414d781db66d65b69"
+                "reference": "3b9dff8aaf7323590c1d2e443db701eb1f9aa0d3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/mime-type-detection/zipball/fda190b62b962d96a069fcc414d781db66d65b69",
-                "reference": "fda190b62b962d96a069fcc414d781db66d65b69",
+                "url": "https://api.github.com/repos/thephpleague/mime-type-detection/zipball/3b9dff8aaf7323590c1d2e443db701eb1f9aa0d3",
+                "reference": "3b9dff8aaf7323590c1d2e443db701eb1f9aa0d3",
                 "shasum": ""
             },
             "require": {
@@ -3092,8 +3092,9 @@
                 "php": "^7.2 || ^8.0"
             },
             "require-dev": {
-                "phpstan/phpstan": "^0.12.36",
-                "phpunit/phpunit": "^8.5.8"
+                "friendsofphp/php-cs-fixer": "^2.18",
+                "phpstan/phpstan": "^0.12.68",
+                "phpunit/phpunit": "^8.5.8 || ^9.3"
             },
             "type": "library",
             "autoload": {
@@ -3122,7 +3123,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-08-09T10:34:01+00:00"
+            "time": "2021-01-18T20:58:21+00:00"
         },
         {
             "name": "maatwebsite/laravel-sidebar",
@@ -6857,12 +6858,12 @@
             "version": "0.9.4",
             "source": {
                 "type": "git",
-                "url": "https://github.com/tightenco/ziggy.git",
+                "url": "https://github.com/tighten/ziggy.git",
                 "reference": "82ea6ec6cb6ab3545b0245310b2a424316fe48d8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/tightenco/ziggy/zipball/82ea6ec6cb6ab3545b0245310b2a424316fe48d8",
+                "url": "https://api.github.com/repos/tighten/ziggy/zipball/82ea6ec6cb6ab3545b0245310b2a424316fe48d8",
                 "reference": "82ea6ec6cb6ab3545b0245310b2a424316fe48d8",
                 "shasum": ""
             },
@@ -7221,12 +7222,12 @@
             "version": "1.9.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/webmozart/assert.git",
+                "url": "https://github.com/webmozarts/assert.git",
                 "reference": "bafc69caeb4d49c39fd0779086c03a3738cbb389"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/webmozart/assert/zipball/bafc69caeb4d49c39fd0779086c03a3738cbb389",
+                "url": "https://api.github.com/repos/webmozarts/assert/zipball/bafc69caeb4d49c39fd0779086c03a3738cbb389",
                 "reference": "bafc69caeb4d49c39fd0779086c03a3738cbb389",
                 "shasum": ""
             },
